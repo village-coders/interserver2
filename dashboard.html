@@ -381,6 +381,51 @@
     </div>
 
     <script>
+        window.showAlert = function(message) {
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(0,0,0,0.5)';
+            overlay.style.zIndex = '9999';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+
+            const modal = document.createElement('div');
+            modal.style.background = 'white';
+            modal.style.padding = '20px 30px';
+            modal.style.borderRadius = '4px';
+            modal.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            modal.style.textAlign = 'center';
+            modal.style.minWidth = '300px';
+
+            const text = document.createElement('p');
+            text.style.marginBottom = '20px';
+            text.style.fontSize = '16px';
+            text.style.color = '#333';
+            text.textContent = message;
+
+            const btn = document.createElement('button');
+            btn.textContent = 'OK';
+            btn.style.background = 'var(--primary-blue, #007bff)';
+            btn.style.color = 'white';
+            btn.style.border = 'none';
+            btn.style.padding = '8px 25px';
+            btn.style.borderRadius = '3px';
+            btn.style.cursor = 'pointer';
+            btn.style.fontSize = '14px';
+
+            btn.onclick = () => document.body.removeChild(overlay);
+
+            modal.appendChild(text);
+            modal.appendChild(btn);
+            overlay.appendChild(modal);
+            document.body.appendChild(overlay);
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
             // Check Auth
             const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -517,7 +562,7 @@
                         submitBtn.disabled = false;
                         submitBtn.style.opacity = '1';
 
-                        setTimeout(() => alert('Order submitted successfully! Your invoice is now pending.'), 100);
+                        setTimeout(() => showAlert('Order submitted successfully! Your invoice is now pending.'), 100);
                     }, 1500);
                 });
             }

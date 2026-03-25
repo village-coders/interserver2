@@ -189,7 +189,7 @@
 }
 body {
   margin: 0;font-weight: 400;
-  font-family: var(--BlinkMacSystemFont) !important;
+  font-family: var(--inter) !important;
   color: #292F34;
 }
 
