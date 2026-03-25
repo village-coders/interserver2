@@ -370,7 +370,8 @@
                 const user = await userRes.json();
                 document.querySelector('.small-box.bg-yellow h3').textContent = 'WELCOME, ' + user.name.split(' ')[0].toUpperCase();
                 document.getElementById('lastLoginTime').textContent = '08:50am - ' + new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-
+                document.getElementById('username').textContent = user.name;
+                document.getElementById('useremail').textContent = user.email;
                 // Invoices
                 fetchInvoices();
 
