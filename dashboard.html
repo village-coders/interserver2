@@ -196,7 +196,7 @@
             <div class="summary-grid">
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>WELCOME, SAMINU</h3>
+                        <h3>WELCOME, ...</h3>
                         <p>Last Login: <span style="font-weight: 400;" id="lastLoginDate">Today</span></p>
                     </div>
                     <div class="icon"><i class="far fa-id-card"></i></div>
@@ -385,6 +385,8 @@
     </div>
 
     <script>
+        const API_BASE_URL = 'https://interserver-backend.vercel.app';
+
         window.showAlert = function(message) {
             const overlay = document.createElement('div');
             overlay.style.position = 'fixed';
@@ -441,7 +443,7 @@
             // Verify user with backend
             let currentUser;
             try {
-                const res = await fetch('/api/auth/me', {
+                const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (!res.ok) throw new Error('Not authorized');
@@ -503,7 +505,7 @@
 
             const fetchInvoices = async () => {
                 try {
-                    const res = await fetch('/api/invoices', {
+                    const res = await fetch(`${API_BASE_URL}/api/invoices`, {
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
                     if (res.ok) {
@@ -540,7 +542,7 @@
                     submitBtn.style.opacity = '0.7';
 
                     try {
-                        const res = await fetch('/api/invoices', {
+                        const res = await fetch(`${API_BASE_URL}/api/invoices`, {
                             method: 'POST',
                             headers: { 
                                 'Content-Type': 'application/json',
