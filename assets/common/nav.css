@@ -1,0 +1,937 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Black.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-BlackItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Bold.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-BoldItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Heavy.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-HeavyItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-LightItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Light.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Medium.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Regular.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-MediumItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-RegularItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-SemiboldItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Semibold.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-ThinItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Thin.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Ultralight.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-Ultralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BlinkMacSystemFont';
+    src: url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-UltralightItalic.woff2') format('woff2'),
+        url('../fonts/BlinkMacSystemFont-webfont/BlinkMacSystemFont-UltralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+:root {
+  --primary: #2563EB;
+  --secondary: #FF9600;
+  --nav-link-color: #292929;
+  --white: #fff;
+  --dark: #292929;
+  --shadow: box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+  --border-radius: 50px;
+  --mont: 'Montserrat', sans-serif;
+  --BlinkMacSystemFont: 'BlinkMacSystemFont';
+  --inter: 'Inter', sans-serif;
+}
+* { margin: 0%;padding: 0%; }
+.wrapper.twitter {
+    background: #f3582a none repeat scroll 0 0;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 700;
+    padding: 6px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.wrapper.twitter a {
+    color: #fff;
+}
+body {
+  margin: 0;font-weight: 400;
+  font-family: var(--BlinkMacSystemFont) !important;
+  color: #292F34;
+}
+
+body a {
+  text-decoration: none;
+  
+}
+
+/* ========================================= New Classess ========================================================= */
+/* ========================================= New Classess ========================================================= */
+html { overflow-x: hidden; }
+html, body { font-size: 18px; }
+.heading {
+  font-size:38px;font-weight: normal;font-family: 'BlinkMacSystemFontbold';text-align: center;
+}
+.heading-sm {
+  font-size: 36px;font-family: 'BlinkMacSystemFontregular';font-weight: 600;
+}
+.lead-sm {
+  font-size: 18px;font-family: 'BlinkMacSystemFontlight';
+}
+ 
+/* .ff-BlinkMacSystemFont-400 { font-family: 'BlinkMacSystemFontregular'; } */
+.fw-600 { font-weight: 600; } 
+.title {
+  color: #333;font-size: 18px;padding: 0 0 8px; 
+}
+.btn-outline-primary {
+	display: inline-block;padding: 6px 32px;background: transparent; 
+	border-radius: 0;font-size: 16px;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
+	text-transform: uppercase;border: 2px solid #034083;color: #034083;font-family: 'BlinkMacSystemFontregular';
+}
+.btn-outline-primary:hover {
+	background-color: #034083;border: 2px solid #034083;color: #fff; 
+}
+header .container {
+  position: relative;
+}
+
+header#header {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #034083;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.1; 
+}
+.btn-primary { font-weight: 700;font-family: var(--BlinkMacSystemFont); background-color: var(--primary);border-radius: var(--border-radius) !important; }
+.btn-secondary { font-weight: 700;font-family: var(--BlinkMacSystemFont); background-color: var(--secondary);border-radius: var(--border-radius) !important; }
+
+
+/*Main Buttons*/
+.btn-primary {
+  border-radius: 0;
+  padding: 1rem 3rem;
+  margin-right: 10px;
+  text-transform: uppercase;
+  box-shadow: 0px 10px 10px #38388a3d;
+}
+.btn-primary {
+	border: 2px solid #0089ff;
+}
+.btn-primary.blue-btn {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0px 10px 10px #38388a3d;
+}
+
+.btn-primary.blue-btn:hover {
+  background-color: #FF9600;
+  border: 2px solid #FF9600;
+}
+
+.btn-primary.outline-btn {
+  background-color: transparent;
+  border: 2px solid #182333;
+  color: #292F34;
+}
+
+.btn-primary.outline-btn:hover {
+  border: 2px solid #FF9600;
+  color: #FF9600;
+}
+
+.btn-secondary {
+  border-radius: 0;
+  padding: 0.8rem 3rem;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.btn-secondary {
+  border: 2px solid var(--secondary);
+}
+#navWrapp {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* background-color: #034083; */
+  z-index: 997;
+  padding: 15px 0;
+  background:#fff;
+  border-bottom:1px solid #e2e2e2;
+}
+
+#navWrapp .container {
+  position: relative;
+}
+#navWrapp .nav-link {
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+	color: var(--nav-link-color) !important;
+}
+#navWrapp .dropdown {
+  position: unset !important;
+}
+/*.dropdown-menu i  {
+    font-size: 0.5rem;
+	margin-bottom: 0.5rem;
+}*/
+.drop__items:hover i{
+	color:#fff;
+}
+#navWrapp .dropdown .dropdown-menu {
+  width: 75%;
+  padding: 2rem;
+  border: 0;
+  border-radius: 1rem;
+  position: absolute;
+  left: 25%;
+  top: 90%;
+  -webkit-box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.25);
+  -webkit-transform: translateY(60%);
+          transform: translateY(60%);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  opacity: 0;
+}
+
+#navWrapp .dropdown .dropdown-menu .others .inn-other {
+  padding: 10px; 
+  float: left;
+  border-radius: 8px;
+}
+
+#navWrapp .dropdown .dropdown-menu .others .inn-other a {
+	float: left;
+	color: #888;
+	margin-bottom: 1px;
+	width: 100%;
+	font-size: 13px;
+	padding: 10px 1px;
+	/* border: 1px solid #f3f3f3; */
+}
+i.mn {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.btn-secondary-interserver {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    margin-right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+	margin: 0 0px 0 17px;
+}
+.btn-secondary-interserver:hover {
+    background: var(--primary);
+    color: white;
+}
+#navWrapp .dropdown .dropdown-menu .others .inn-other a:hover {
+  color: #2563eb;
+  background: #f0fffb;
+}
+
+
+#navWrapp .dropdown .dropdown-menu .others h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #3e3e3e;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+
+#navWrapp .dropdown .dropdown-menu .drop__items {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 1.5rem 0;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    display: inline-block !important;
+    align-items: flex-start;
+    height: 115px;
+    background: transparent;
+    padding: 23px 24px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #99999961;
+}
+
+#navWrapp .dropdown .dropdown-menu .drop__items:hover {
+  background: #2563eb;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items:hover .caption .title{
+	color:#fff;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items img {
+  width: 3rem;
+  height: auto;
+}
+.inn-other i {
+    color: #2563eb;
+    padding-right: 12px;
+    top: 3px;
+    position: relative;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items .caption {
+    /* width: calc(100% - 5rem); */
+    /* padding-left: .5rem; */
+    width: 100%;
+}
+
+#navWrapp .dropdown .dropdown-menu .drop__items .caption .title {
+    margin-bottom: 0;
+    color: #404141;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 19px;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items .caption small {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 0;
+  color: #525666;
+}
+
+#navWrapp .dropdown:hover .dropdown-menu {
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+#navWrapp .dropdown .dropdown-toggle::after {
+  border: 0;width: 12px;height: 12px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOC4xMzY1NSAwLjMwODEzTDQuODAwMSAzLjc5MjU0TDEuNDYzNjUgMC4zMDgxM0MxLjEyOTkxIC0wLjA0MDIxMDEgMC41ODM4NTUgLTAuMDQwMjEwMSAwLjI1MDMwNiAwLjMwODEzQy0wLjA4MzQzNTIgMC42NTY0NzEgLTAuMDgzNDM1MiAxLjIyNjc0IDAuMjUwMzA2IDEuNTc1MDhMNC4xOTM1MiA1LjY5MzE2QzQuNTI3MDcgNi4wNDE3IDUuMDczMTIgNi4wNDE3IDUuNDA2NjcgNS42OTMxNkw5LjM0OTY5IDEuNTc1MDhDOS42ODM0NCAxLjIyNjc0IDkuNjgzNDQgMC42NTY0NzEgOS4zNDk2OSAwLjMwODEzQzkuMDE2MTUgLTAuMDQwMjEwMSA4LjQ3MDA5IC0wLjA0MDIxMDEgOC4xMzY1NSAwLjMwODEzWiIgZmlsbD0iIzg5OUFBRiIvPgo8L3N2Zz4K') no-repeat center center / 10px;transition: all .3s ease-in-out;
+}
+
+#navWrapp .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
+
+#navWrapp .nav-link.primary {
+	padding: .5rem 1.4rem .5rem 1.4rem;
+	line-height: 1 !important;
+	background-color: #FFF;
+	border-radius: var(--border-radius);
+	border: none;
+	transition: all .3s ease-in-out;
+	position: relative;
+	top: -2px;
+	color: var(--white);
+}
+#navWrapp .nav-link.primary:hover, #navWrapp .nav-link.primary:focus { background-color: var(--dark); }
+
+#navWrapp .navbar-toggler {
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #fff;
+  font-size: 1.25rem;
+  width: 28px;
+  height: 22px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#navWrapp .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+#navWrapp .navbar-toggler .burg {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark);
+  border-radius: 2px;
+}
+
+#navWrapp .navbar-toggler .burg::before, #navWrapp .navbar-toggler .burg::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark);
+  border-radius: 2px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+#navWrapp .navbar-toggler .burg::after {
+  top: auto;
+  bottom: 0%;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/*============================Typography===============================================*/
+/*Text Color*/
+.text-blue{
+	color:#0189ff;
+}
+
+.text-orange {
+  color: #FF9600;
+}
+
+.text-gray {
+  color: #777777;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-white {
+  color: #fff;
+}
+.bg-light { background-color: #F6F9FF !important; }
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+/*Backgrounds*/
+.bg-light-blue {
+  background-color: #F6F8FC;
+}
+
+.bg-dark-blue {
+  background-color: #1C538F;
+}
+
+.bg-light-gray {
+  background-color: #F6F6F6;
+}
+
+/*Headings*/
+ .h1, h1 {
+    font-size: 48px;
+    font-weight:700;
+  }
+ .h2, h2 {
+    font-size:38px;
+    font-weight:700;
+  }
+
+.h3, h3 {
+    font-size:24px;
+    font-weight:600;
+  }
+ .h5, h5 {
+    font-size:20px;
+    font-weight:600;
+  }
+   
+.p, p {
+    font-size:18px;
+    font-weight:300;
+    color:#5d5d5d;
+  }
+
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  text-transform: capitalize;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #5D5D5D;
+}
+
+.section-title.left {
+  text-align: left;
+}
+
+/* .hero {
+  padding: 39px 0 2%;
+  background-color: #F6F8FC;
+} */
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero p {
+	font-size: 1.1rem;
+	line-height: 1.7rem;
+	margin: 17px 0;
+}
+
+.hero h2.pr {
+  font-size: 4.2rem;
+} 
+.hero h2.pr span {
+  font-size: 1.5rem; 
+}
+.btn-white {
+	box-shadow: var(--shadow);
+	border-radius: var(--border-radius);
+	font-family: var(--mont) !important;
+	font-weight: 700;
+	padding: 12px 57px;
+	border: 2px solid #0089FF;
+	color: #0089FF;
+}
+/*==========================FOOTER===================================*/
+footer {
+  color: #fff;
+  font-size: 0.8rem;
+  background-color: #073965;
+}
+ 
+ 
+footer .container ul {
+  padding: 0;
+}
+
+footer .container ul li {
+  list-style: outside none none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+footer a:hover { text-decoration: underline;color: var(--white); }
+
+footer .copyright { border-top: 1px solid #09477D; }
+footer .copyright .container {
+  color: #fff; 
+}
+
+ 
+footer .copyright .copy__links a:not(:last-child) {
+  margin-right: 1.5rem;position: relative;
+}
+footer .copyright .copy__links a:not(:last-child)::after {
+  content: '|';font-size: .75rem;color: var(--white);
+  position: absolute;top: 0%;right: -.875rem;
+}
+.social {
+	/* display: inline-flex; */
+	/* float: right; */
+	width: auto;
+	display: inline-block;
+	text-align: center;
+}
+.social li {
+	display: inline-block;
+	text-align: center;
+	padding-left: 12px !important;
+}
+.payment {
+	height: 33px;
+}
+.social img {
+	width: 30px;
+}
+
+footer h6{font-size: 1.5rem !important;}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .navbar-collapse .nav-link {
+    color: #292929;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar-collapse .nav-link.dropdown-toggle::after {
+    content: "\f107";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    border: 0 !important;
+    margin-left: auto !important;
+    font-size: 20px;
+    margin-left: 1rem;
+    left: 9px;
+    color: #0089ff;
+  }
+  #navWrapp .dropdown .dropdown-toggle::after{background:none;}
+  .navbar-collapse .nav-item {
+    border-bottom: 1px solid #ffffff1f;
+  }
+  .navbar-collapse .dropdown {
+    position: relative;
+  }
+  .navbar-collapse .dropdown .dropdown-menu {
+    position: unset !important;
+    padding: 1rem !important;
+    background-color: #0251a800;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    -webkit-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+  .navbar-collapse .dropdown .dropdown-menu .others h4 {
+    /* color: #fff; */
+    margin-bottom: 10px;
+  }
+  .navbar-collapse .dropdown .dropdown-menu .drop__items {
+    margin: .2rem 0;
+  }
+  /* .navbar-collapse .dropdown .dropdown-menu .drop__items .title, .navbar-collapse .dropdown .dropdown-menu .drop__items small {
+    color: #fff !important;
+  } */
+  .navbar-collapse .dropdown .dropdown-menu .drop__items img {
+    width: 3rem !important;
+    /* -webkit-filter: contrast(0) brightness(10);
+            filter: contrast(0) brightness(10); */
+  }
+  .navbar-collapse .dropdown .dropdown-menu .drop__items .caption {
+    width: calc(100% - 3rem);
+  }
+  .navbar-collapse .dropdown .dropdown-menu .drop__items .caption .title {
+    font-size: 13px !important;margin-bottom: 0;
+  }
+  .navbar-collapse .dropdown .dropdown-menu .drop__items .caption small {
+    font-size: 12px !important;
+  }
+  #navWrapp .dropdown .dropdown-menu .drop__items { 
+    height: 85px; 
+    align-items: center;
+  }
+  .navbar-toggler {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .dropdown-menu {
+  width: 100% !important;}
+footer h6{font-size: 1.5rem !important;}}
+/**================MEGA MENUS=================*/
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s;
+    transition: .3s;
+    margin-top: 0;
+  }
+  .navbar .nav-item .dropdown-menu.fade-down {
+    top: 80%;
+    -webkit-transform: rotateX(-75deg);
+            transform: rotateX(-75deg);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  .navbar .nav-item .dropdown-menu.fade-up {
+    top: 180%;
+  }
+  .navbar .nav-item:hover .nav-link {
+    color: #fff;
+  }
+  .navbar .nav-item:hover .dropdown-menu {
+    -webkit-transition: .3s;
+    transition: .3s;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+  .navbar .navbar-nav .nav-link {
+    color: var(--nav-link-color) !important;
+  }
+}
+/*# sourceMappingURL=nav.css.map */
+/*responsive css*/
+@media (max-width: 840px) {
+ 
+.navbar-collapse .nav-link.dropdown-toggle::after {
+    content: "\f107";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    border: 0 !important;
+    margin-left: auto !important;
+    font-size: 20px;
+    margin-left: 1rem;
+    left: 9px;
+    color: #0089ff;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items {
+
+    text-align: left;
+    width: 100%;
+}
+#navWrapp .dropdown .dropdown-toggle::after {
+    border: 0;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    left: 6px;
+    top: -2px;
+	background:none !important; 
+}
+#navWrapp .dropdown .dropdown-menu .drop__items {
+    height: auto;
+    align-items: center;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 1rem 0;    
+    height: auto;
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 8px; 
+}
+i.mn {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: inline-block;
+    float: left;
+    margin-right: 11px;
+}
+#navWrapp .dropdown .dropdown-menu .drop__items .caption {
+     
+    width: auto;
+    float: left;
+}
+.btn-secondary-interserver { 
+    gap: 0;
+    margin: 0 0px 0 0;
+}
+#navWrapp .nav-link {
+    text-transform: uppercase;
+    display: inline-flex;
+}
+footer h6{font-size: 1.5rem !important;}
+}
+@media only screen and (min-width: 280px) and (max-width: 768px) {
+  .hero .hero h1 {
+    font-size: 2rem;
+  }
+  .hero h2.pr {
+    font-size: 3.2rem;
+  }
+  .butrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .btn-primary {
+    padding: 0.5rem 1rem;
+  }
+  footer .container {
+    display: inline-block !important;
+  }
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+  footer h6{font-size: 1.5rem !important;}
+}
+@media (max-width:1200px) {
+  html, body { font-size: 15px; }
+  .heading { font-size: 32px; }
+  .heading-sm { font-size: 24px; }
+  .lead-sm { font-size: 16px; }
+  .title { font-size: 17px;padding: 0 0 6px; }
+  .lead { font-size: 1.125rem; }
+  .blue-btn, .black-btn { padding: 8px 24px; }
+}
+@media (max-width:768px) {
+  html, body { font-size: 14px; }
+  .heading { font-size: 28px; }
+  .heading-sm { font-size: 20px; }
+  .lead-sm { font-size: 15px; }
+  .title { font-size: 16px;padding: 0 0 4px; }
+  .blue-btn, .black-btn { padding: 6px 16px;font-size: 14px; }
+  footer h6{font-size: 1.5rem !important;}
+}
+
+@media (max-width:576px) {
+  html, body { font-size: 13px; }
+  html { overflow-x: hidden; }
+  .heading { font-size: 19px; }
+  .heading-sm { font-size: 16px; }
+  .lead-sm { font-size: 13px; }
+  .title { font-size: 14px;padding: 0 0 4px; }
+  footer .container ul a { font-size: 1rem; }
+  .col-sm-6{width: 100%;
+    text-align: center;}
+	footer h6{font-size: 1.5rem !important;}
+}

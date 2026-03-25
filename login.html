@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterServer Login Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Source Sans Pro', sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; background: #fff; }
+
+        /* Top Black Header */
+        .header { background-color: #000; height: 75px; display: flex; align-items: center; padding: 0 40px; flex-shrink: 0; }
+        .logo { color: #fff; font-size: 28px; letter-spacing: -0.5px; font-weight: 400; display: flex; align-items: baseline; }
+        .logo .inter { font-weight: 300; }
+        .logo .server { font-size: 32px; font-weight: 400; }
+        .logo .net { color: #00a8ff; font-size: 16px; margin-left: 2px; }
+        /* Simulating the blue swoosh under the S */
+        .s-swoosh { position: relative; }
+        .s-swoosh::after { content: ''; position: absolute; bottom: 4px; left: -2px; width: 120%; height: 3px; background: #00a8ff; border-radius: 50%; transform: rotate(-5deg); }
+
+        /* Split Layout Container */
+        .main-container { display: flex; flex: 1; height: calc(100vh - 75px); }
+
+        /* Left Panel - Dark Blue */
+        .left-panel { 
+            width: 42%; 
+            background: #02366b;
+            /* Simulating the textured vignette background from the screenshot */
+            background-image: radial-gradient(circle at center, rgba(5, 75, 145, 0.8) 0%, rgba(2, 45, 90, 1) 100%);
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            padding: 40px;
+        }
+
+        .left-title { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 80px; text-transform: uppercase; text-align: center; }
+
+        .stats-row { display: flex; gap: 50px; text-align: center; }
+        .stat-item { display: flex; flex-direction: column; align-items: center; }
+        
+        .stat-icon { font-size: 70px; margin-bottom: 25px; color: #fff; }
+        .stat-icon img { height: 70px; filter: brightness(0) invert(1); } /* Fallback if using SVG */
+        
+        .stat-number { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
+        .stat-label { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #e9a93f; text-transform: uppercase; letter-spacing: 1.5px; }
+
+        /* Right Panel - White */
+        .right-panel { width: 58%; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+
+        /* The Box structure */
+        .auth-box { width: 420px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.15); border-radius: 3px; border-top: 3px solid #007bff; margin-bottom: 20px; }
+        
+        .box-header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f4f4f4; }
+        .box-icon { width: 35px; height: 35px; background-color: #f38346; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 18px; margin-right: 15px; }
+        .box-title { font-size: 16px; font-weight: 600; color: #444; }
+
+        .box-body { padding: 20px; }
+
+        /* Exact Input Field Styling (Icons on the right) */
+        .input-group { display: flex; margin-bottom: 15px; border: 1px solid #d2d6de; border-radius: 0; }
+        .input-group input { flex: 1; border: none; padding: 10px 12px; font-size: 14px; color: #555; outline: none; font-family: 'Source Sans Pro', sans-serif; }
+        .input-group input::placeholder { color: #999; }
+        .input-group .addon { background-color: #eee; width: 40px; display: flex; justify-content: center; align-items: center; color: #555; border-left: 1px solid #d2d6de; font-size: 14px; }
+
+        /* Complex alignment for the bottom of the form */
+        .form-footer { display: flex; justify-content: space-between; margin-top: 10px; }
+        
+        .remember-wrap { display: flex; align-items: center; margin-top: 10px; }
+        .remember-wrap input { margin-right: 5px; cursor: pointer; }
+        .remember-wrap label { font-size: 14px; font-weight: 600; color: #333; cursor: pointer; }
+
+        .actions-wrap { display: flex; flex-direction: column; align-items: flex-end; }
+        .forgot-link { font-size: 13px; color: #007bff; text-decoration: none; margin-bottom: 8px; }
+        .forgot-link:hover { text-decoration: underline; }
+        .btn-submit { background-color: #007bff; color: white; border: none; padding: 8px 25px; font-size: 14px; font-weight: 600; border-radius: 3px; cursor: pointer; font-family: 'Source Sans Pro', sans-serif; }
+        .btn-submit:hover { background-color: #0069d9; }
+
+        /* Social Sign In */
+        .social-auth { text-align: center; margin-top: 25px; }
+        .social-auth p { font-size: 15px; font-weight: 600; color: #333; margin-bottom: 12px; }
+        .social-btns { display: flex; justify-content: center; gap: 5px; }
+        .s-btn { width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; color: white; border-radius: 3px; text-decoration: none; font-size: 16px; }
+        .s-btn.fb { background-color: #3b5998; }
+        .s-btn.gp { background-color: #dd4b39; }
+        .s-btn.gh { background-color: #444444; }
+        .s-btn.tw { background-color: #383838; } /* Matched dark color from screenshot */
+
+        /* Bottom Links & Footer */
+        .toggle-link { font-size: 14px; color: #777; }
+        .toggle-link a { color: #007bff; text-decoration: none; font-weight: 600; cursor: pointer; }
+        .toggle-link a:hover { text-decoration: underline; }
+
+        .copyright { position: absolute; bottom: 30px; font-size: 13px; color: #999; }
+
+        /* Floating Chat Bubble */
+        .chat-bubble { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #1a6ab3; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; z-index: 100; }
+
+        /* View Toggling (Hide Signup initially) */
+        .signup-view-only { display: none; }
+        body.is-signup .login-view-only { display: none; }
+        body.is-signup .signup-view-only { display: flex; } /* Flex for the form footer */
+        body.is-signup .signup-view-only.block { display: block; } 
+        body.is-signup .signup-view-only.inline { display: inline; } 
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <!-- <span class="inter">inter</span><span class="server s-swoosh">Server</span><span class="net">.net</span> -->
+             <img src="./assets/images/new/logo_new.webp" alt="interserver logo">
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="left-panel">
+            <div class="left-title login-view-only block">Welcome back to our growing community</div>
+            <div class="left-title signup-view-only block">Join our growing community today</div>
+            
+            <div class="stats-row">
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-cloud"></i>
+                    <div class="stat-number">405438</div>
+                    <div class="stat-label">VPS</div>
+                </div>
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-globe"></i>
+                    <div class="stat-number">254114</div>
+                    <div class="stat-label">Websites</div>
+                </div>
+                <div class="stat-item">
+                    <i class="stat-icon fas fa-server"></i>
+                    <div class="stat-number">56490</div>
+                    <div class="stat-label">Servers</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            
+            <div class="auth-box">
+                <div class="box-header">
+                    <div class="box-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="box-title login-view-only block">Sign in to start your session</div>
+                    <div class="box-title signup-view-only block">Register a new membership</div>
+                </div>
+
+                <div class="box-body">
+                    
+                    <form id="loginForm" class="login-view-only block">
+                        <div class="input-group">
+                            <input type="email" placeholder="Email Address" required>
+                            <div class="addon"><i class="fas fa-envelope"></i></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" required>
+                            <div class="addon"><i class="fas fa-eye"></i></div>
+                        </div>
+
+                        <div class="form-footer">
+                            <div class="remember-wrap">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember Me</label>
+                            </div>
+                            <div class="actions-wrap">
+                                <a href="#" class="forgot-link">I forgot my password</a>
+                                <button type="submit" class="btn-submit">Sign In</button>
+                            </div>
+                        </div>
+
+                        <div class="social-auth">
+                            <p>Sign in using:</p>
+                            <div class="social-btns">
+                                <a href="#" class="s-btn fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="s-btn gp"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="s-btn gh"><i class="fab fa-github"></i></a>
+                                <a href="#" class="s-btn tw"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form id="signupForm" class="signup-view-only block" style="flex-direction: column;">
+                        <div class="input-group">
+                            <input type="text" placeholder="Full Name" required>
+                            <div class="addon"><i class="fas fa-user"></i></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email Address" required>
+                            <div class="addon"><i class="fas fa-envelope"></i></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" required>
+                            <div class="addon"><i class="fas fa-lock"></i></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Retype password" required>
+                            <div class="addon"><i class="fas fa-sign-in-alt"></i></div>
+                        </div>
+
+                        <div class="form-footer" style="align-items: center;">
+                            <div class="remember-wrap" style="margin-top: 0;">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to the <a href="#" class="forgot-link">terms</a></label>
+                            </div>
+                            <div class="actions-wrap">
+                                <button type="submit" class="btn-submit">Register</button>
+                            </div>
+                        </div>
+                        
+                        <div class="social-auth">
+                            <p>Sign up using:</p>
+                            <div class="social-btns">
+                                <a href="#" class="s-btn fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="s-btn gp"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="s-btn gh"><i class="fab fa-github"></i></a>
+                                <a href="#" class="s-btn tw"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="toggle-link login-view-only block">
+                Don't have an account? <a onclick="document.body.classList.add('is-signup')">Sign Up</a>
+            </div>
+            <div class="toggle-link signup-view-only block">
+                Already have an account? <a onclick="document.body.classList.remove('is-signup')">Sign In</a>
+            </div>
+
+            <div class="copyright">Copyright © 2026 - All Rights Reserved.</div>
+        </div>
+    </div>
+
+    <div class="chat-bubble">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Default User Setup
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.length === 0) {
+                users.push({
+                    name: 'Saminu Awwal',
+                    email: 'awwalsaminu9@gmail.com', // Match the dashboard name/email initially
+                    password: 'password123'
+                });
+                // Provide a basic default user as well
+                users.push({
+                    name: 'Default User',
+                    email: 'user@example.com',
+                    password: 'password123'
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = loginForm.querySelector('input[type="email"]').value;
+                    const password = loginForm.querySelector('input[type="password"]').value;
+                    
+                    const userList = JSON.parse(localStorage.getItem('users')) || [];
+                    const user = userList.find(u => u.email === email && u.password === password);
+                    
+                    if (user) {
+                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        alert('Invalid email or password');
+                    }
+                });
+            }
+
+            if (signupForm) {
+                signupForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const inputs = signupForm.querySelectorAll('input:not([type="checkbox"])');
+                    const name = inputs[0].value;
+                    const email = inputs[1].value;
+                    const password = inputs[2].value;
+                    const confirmPassword = inputs[3].value;
+
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match');
+                        return;
+                    }
+
+                    const userList = JSON.parse(localStorage.getItem('users')) || [];
+                    if (userList.find(u => u.email === email)) {
+                        alert('An account with this email already exists');
+                        return;
+                    }
+
+                    const newUser = { name, email, password };
+                    userList.push(newUser);
+                    localStorage.setItem('users', JSON.stringify(userList));
+                    localStorage.setItem('currentUser', JSON.stringify(newUser));
+                    
+                    window.location.href = 'dashboard.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
