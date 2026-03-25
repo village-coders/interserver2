@@ -497,7 +497,7 @@
 
                     tr.innerHTML = `
                         <td style="padding: 12px 15px; font-size: 14px;">${inv.date}</td>
-                        <td style="padding: 12px 15px; font-size: 14px;"><span style="background: ${inv.status === 'Paid' ? '#28a745' : '#ffc107'}; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px;">${inv.status}</span></td>
+                        <td style="padding: 12px 15px; font-size: 14px;"><span style="background: ${inv.status === 'Paid' ? '#28a745' : '#ffc107'}; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px;">${inv.status === "Pending" ? "Pending" : inv.status}</span></td>
                         <td style="padding: 12px 15px; font-size: 14px;">${inv.id}</td>
                         <td style="padding: 12px 15px; font-size: 14px;">${inv.price}</td>
                         <td style="padding: 12px 15px; font-size: 14px;">${pdfAction}</td>
@@ -523,7 +523,7 @@
                     e.preventDefault();
                     
                     let count = parseInt(localStorage.getItem('worksheetOrdersCount') || '0');
-                    let invId, pdfUrl, invPrice;
+                    let invId, pdfUrl, invPrice, dueDate;
 
                     const submitBtn = form.querySelector('button[type="submit"]');
                     const originalText = submitBtn.innerHTML;
@@ -534,17 +534,20 @@
                     setTimeout(() => {
                         // Cycle through 3 PDFs indefinitely for new orders
                         if (count % 3 === 0) {
-                            invId = 'IN-' + Math.floor(10000 + Math.random() * 9000000);
+                            invId = 'IN-' + 43890027;
                             pdfUrl = 'assets/pdfs/99729018 - interserver KFC.pdf';
                             invPrice = '£1980.00';
+                            dueDate = '2026-10-16';
                         } else if (count % 3 === 1) {
                             invId = 'IN-' + Math.floor(10000 + Math.random() * 9000000);
                             pdfUrl = 'assets/pdfs/IN-99820830- interserver STAFF PORTAL.pdf';
                             invPrice = '£1980.00';
+                            dueDate = '2026-10-16';
                         } else {
                             invId = 'IN-' + Math.floor(10000 + Math.random() * 9000000);
                             pdfUrl = 'assets/pdfs/IN-99837021- interserver KFC renewals.pdf';
                             invPrice = '£1980.00';
+                            dueDate = '2026-10-16';
                         }
 
                         // Generate new invoice attached to PDF
@@ -553,7 +556,8 @@
                             date: new Date().toISOString().split('T')[0],
                             status: 'Pending',
                             price: invPrice,
-                            pdfUrl: pdfUrl
+                            pdfUrl: pdfUrl,
+                            dueDate: dueDate
                         };
                         invoices.unshift(newInvoice);
                         localStorage.setItem('invoices', JSON.stringify(invoices));
