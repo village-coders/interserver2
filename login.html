@@ -314,46 +314,40 @@
                 }
             });
 
-            // Default User Setup
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.length === 0) {
-                users.push({
-                    name: 'Halal Food Authority',
-                    email: 'ict@halalfoodauthority.com', // Match the dashboard name/email initially
-                    password: 'halal123'
-                });
-                // Provide a basic default user as well
-                users.push({
-                    name: 'Default User',
-                    email: 'user@example.com',
-                    password: 'password123'
-                });
-                localStorage.setItem('users', JSON.stringify(users));
-            }
+            // Removed localStorage seed
 
             const loginForm = document.getElementById('loginForm');
             const signupForm = document.getElementById('signupForm');
 
             if (loginForm) {
-                loginForm.addEventListener('submit', (e) => {
+                loginForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     const email = loginForm.querySelector('input[type="email"]').value;
                     const password = loginForm.querySelector('input[type="password"]').value;
                     
-                    const userList = JSON.parse(localStorage.getItem('users')) || [];
-                    const user = userList.find(u => u.email === email && u.password === password);
-                    
-                    if (user) {
-                        localStorage.setItem('currentUser', JSON.stringify(user));
-                        window.location.href = 'dashboard.html';
-                    } else {
-                        showAlert('Invalid email or password');
+                    try {
+                        const res = await fetch('/api/auth/login', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email, password })
+                        });
+                        const data = await res.json();
+                        
+                        if (res.ok) {
+                            localStorage.setItem('token', data.token);
+                            localStorage.setItem('currentUser', JSON.stringify(data));
+                            window.location.href = 'dashboard.html';
+                        } else {
+                            showAlert(data.message || 'Invalid email or password');
+                        }
+                    } catch (error) {
+                        showAlert('Error connecting to server');
                     }
                 });
             }
 
             if (signupForm) {
-                signupForm.addEventListener('submit', (e) => {
+                signupForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     const inputs = signupForm.querySelectorAll('input:not([type="checkbox"])');
                     const name = inputs[0].value;
@@ -366,18 +360,24 @@
                         return;
                     }
 
-                    const userList = JSON.parse(localStorage.getItem('users')) || [];
-                    if (userList.find(u => u.email === email)) {
-                        showAlert('An account with this email already exists');
-                        return;
+                    try {
+                        const res = await fetch('/api/auth/register', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, password })
+                        });
+                        const data = await res.json();
+                        
+                        if (res.ok) {
+                            localStorage.setItem('token', data.token);
+                            localStorage.setItem('currentUser', JSON.stringify(data));
+                            window.location.href = 'dashboard.html';
+                        } else {
+                            showAlert(data.message || 'Registration failed');
+                        }
+                    } catch (error) {
+                        showAlert('Error connecting to server');
                     }
-
-                    const newUser = { name, email, password };
-                    userList.push(newUser);
-                    localStorage.setItem('users', JSON.stringify(userList));
-                    localStorage.setItem('currentUser', JSON.stringify(newUser));
-                    
-                    window.location.href = 'dashboard.html';
                 });
             }
         });
