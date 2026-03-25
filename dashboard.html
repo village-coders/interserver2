@@ -107,15 +107,15 @@
 
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <div class="logo-circle">IS</div>
+            <img src="./assets/images/new/interserver_short.webp" class="logo-circle" />
             <span>InterServer</span>
         </div>
         
         <div class="user-panel">
             <div class="user-avatar">H</div>
             <div class="user-info">
-                <div id="username" class="name">Halal Food Authority <i class="fas fa-pencil-alt" style="font-size: 10px; margin-left:5px; color:#888;"></i></div>
-                <div id="useremail" class="email">ict@halalfoodauthority.com</div>
+                <div id="username" class="name"> <i class="fas fa-pencil-alt" style="font-size: 10px; margin-left:5px; color:#888;"></i></div>
+                <div id="useremail" class="email"></div>
             </div>
         </div>
 
@@ -158,7 +158,7 @@
             <div class="summary-grid">
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>WELCOME, HALAL</h3>
+                        <h3>WELCOME, ...</h3>
                         <p>Last Login: <span id="lastLoginTime">08:50am - 25 Mar, 2026</span></p>
                     </div>
                     <div class="icon"><i class="far fa-id-card"></i></div>
@@ -385,7 +385,7 @@
 
                 tickets.slice(0, 5).forEach(ticket => {
                     const tr = document.createElement('tr');
-                    const lastReplier = ticket.replies.length > 0 ? ticket.replies[ticket.replies.length-1].userName : 'Halal Food Authority';
+                    const lastReplier = ticket.replies.length > 0 ? ticket.replies[ticket.replies.length-1].userName : 'Support Agent';
                     tr.innerHTML = `
                         <td style="text-align: center;">XFA-${ticket._id.substr(-5).toUpperCase()}</td>
                         <td style="text-align: center;">${ticket.subject}</td>
