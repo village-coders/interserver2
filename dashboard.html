@@ -184,6 +184,31 @@
                 </div>
             </div>
 
+
+            <!-- Recent Tickets -->
+            <div class="section-card">
+                <div class="section-header">
+                    <span><i class="fas fa-briefcase"></i> RECENT TICKETS</span>
+                    <button class="view-all-btn" onclick="window.location.href='tickets.html'"><i class="far fa-eye"></i> View All</button>
+                </div>
+                <div class="table-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Ticket ID</th>
+                                <th style="text-align: center;">Subject</th>
+                                <th style="text-align: center;">Last Replier</th>
+                                <th style="text-align: center;">Status</th>
+                                <th style="text-align: center;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentTicketsList">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- Worksheet & Invoices Section -->
             <div class="worksheet-section" style="margin-bottom: 30px;">
                 <button id="buyWorksheetBtn" class="btn-order">
@@ -213,29 +238,6 @@
                 </div>
             </div>
 
-            <!-- Recent Tickets -->
-            <div class="section-card">
-                <div class="section-header">
-                    <span><i class="fas fa-briefcase"></i> RECENT TICKETS</span>
-                    <button class="view-all-btn" onclick="window.location.href='tickets.html'"><i class="far fa-eye"></i> View All</button>
-                </div>
-                <div class="table-body">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="text-align: center;">Ticket ID</th>
-                                <th style="text-align: center;">Subject</th>
-                                <th style="text-align: center;">Last Replier</th>
-                                <th style="text-align: center;">Status</th>
-                                <th style="text-align: center;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recentTicketsList">
-                            <!-- Injected by JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
             <!-- Service Grid -->
             <div class="service-grid">
