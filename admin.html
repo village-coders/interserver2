@@ -65,7 +65,7 @@
                         <span style="color: #777;">${new Date(ticket.createdAt).toLocaleDateString()}</span>
                     </div>
                     <div class="user-info">From: ${ticket.userId ? ticket.userId.name : 'Unknown'} (${ticket.userId ? ticket.userId.email : 'N/A'})</div>
-                    <p style="margin: 15px 0; color: #444;">${ticket.message}</p>
+                    <p style="margin: 15px 0; color: #444; white-space: pre-wrap;">${ticket.message}</p>
                     <div style="font-size: 13px; color: #007bff; margin-bottom: 10px;">Replies: ${ticket.replies.length}</div>
                     <button onclick="openAdminReply('${ticket._id}', '${ticket.subject.replace(/'/g, "\\'")}')" class="btn-reply">Manage Ticket</button>
                 `;
