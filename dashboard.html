@@ -408,7 +408,7 @@
         };
 
         const fetchInvoices = async () => {
-            const res = await fetch(`${API_BASE_URL}/api/invoices`, {
+            const res = await fetch(`${API_BASE_URL}/api/invoicesw`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (res.ok) {
