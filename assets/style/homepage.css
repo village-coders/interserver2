@@ -1,0 +1,37 @@
+.hero{background: #EEF3FF; min-height:630px;}
+.hero img{max-width:100%;}
+.priceTable{border:1px solid #D9D9D9; border-radius:15px;  box-shadow: 0px 10px 10px #38388a14;}
+.priceTagTable { font-size: 64px; font-weight: bold;}
+.priceTagTable sup{font-size:26px; position:relative; top:-10px;}
+.cardHead p{letter-spacing:1px; color:#404040; font-size:16px; font-weight:bold; text-transform:uppercase;}
+.priceTagTable span{font-weight:normal; font-size:14px; line-height:normal; text-align: left; margin-left:5px;}
+.cardBody ul{width:260px; max-width:100%; margin:auto;}
+.cardBody ul li{background: url(../images/home/Check-Icon.png); background-repeat:no-repeat; background-position:0px 10px; padding-left:30px; color:#5D5D5D; font-size:16px; margin:8px 0px; }
+.cardFooter a{width:250px; max-width:100%; padding:10px 20px; font-weight: normal;}
+
+.newsBox{border:1px solid #D9D9D9; border-radius:15px;  box-shadow: 0px 10px 10px #38388a14;}
+.newsBox ul {list-style: none; padding:0px; margin:0px;}
+.newsBox ul li{border:1px solid #D9D9D9; border-radius:15px; min-height:70px; padding:15px 15px 15px 65px;  margin:10px 0px; display:flex; text-align:left; align-items: center; background-image:url(../images/home/news-icon.png); background-repeat:no-repeat; background-position:15px center;}
+.newsBox ul li a{color:#5D5D5D; width:100%; font-size:16px; line-height:normal; padding-right:20px; background-image:url(../images/home/arrow-gray.png); background-repeat:no-repeat; background-position:right center;}
+.newsBox ul li:hover{background-color:#2563EB;}
+.newsBox ul li:hover a{color:#fff; background-image:url(../images/home/arrow-white.png); text-decoration:no-repeat;}
+.tipsBox .newsBox ul li{ background-image:url(../images/home/tips-icon.png); }
+.testimonialsSection .testimonialsContainer{background: #F6F9FF; border-radius:15px; border: 1px solid #e6efff;  box-shadow: 0px 10px 10px #38388a14;}
+
+
+.features-section .card{background: #ffffff; border:1px solid rgba(0, 0, 0, 0.08); border-radius:15px; box-shadow:0px 10px 10px #38388a14; max-width:100%; text-align: left;}
+.features-section .card p{margin-bottom:0px;}
+.teamstext{background:#2563EB; border-radius:15px; padding:30px; color:#fff; width:400px; position:relative; z-index: 1;  box-shadow: 0px 10px 10px #38388a14;}
+.testimonialsContainer .wrapper-top .tp-widget-reviews .tp-widget-review{border: 1px solid #D9D9D9;background-color:#fff;  border-radius: 15px; box-shadow: 0px 10px 10px #38388a14;}
+
+
+
+
+@media only screen and (max-width: 992px) {
+    .teamstext{width: 100%; margin-bottom: 10px;}
+}
+
+
+
+
+
