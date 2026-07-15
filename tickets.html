@@ -119,7 +119,7 @@
     <aside class="sidebar">
         <div class="sidebar-logo">
             <img src="./assets/images/customerservices.png" class="logo-circle" alt="Customer Service" />
-            <span>Customer Service</span>
+            <span>Wix Customer Service</span>
         </div>
         
         <div class="user-panel">
@@ -354,11 +354,11 @@
                             </div>
                             <div id="replies-${ticket._id}" class="reply-container">
                                 <div class="reply">
-                                    <div class="reply-meta">Me - 8th, May 2026</div>${ticket.message}
+                                    <div class="reply-meta">Me - ${new Date(ticket.createdAt || new Date()).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>${ticket.message}
                                 </div>
                                 ${ticket.replies.map(r => `
                                     <div class="reply ${r.isAdmin ? 'staff' : ''}">
-                                        <div class="reply-meta">${r.userName} - 8th, May 2026</div>${r.message}
+                                        <div class="reply-meta">${r.userName} - ${new Date(r.createdAt || new Date()).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>${r.message}
                                     </div>
                                 `).join('')}
                                 <button onclick="openReplyModal('${ticket._id}')" style="background: #eee; border: 1px solid #ddd; padding: 4px 10px; font-size: 12px; cursor: pointer; border-radius:3px;">Reply</button>
